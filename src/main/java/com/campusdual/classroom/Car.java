@@ -2,18 +2,18 @@ package com.campusdual.classroom;
 
 public class Car {
 
+    public Car() {
+    }
+
     public String brand;
     public String model;
-    public static final int MAX_SPEED = 120;
     public String fuel;
+    public static final int MAX_SPEED = 120;
     public int speedometer = 0;
     public int tachometer = 0;
     public String gear = "N";
     public boolean reverse = false;
     public int wheelsAngle = 0;
-
-    public Car() {
-    }
 
 
     public Car(String brand, String model, String fuel) {
@@ -22,10 +22,6 @@ public class Car {
         this.fuel = fuel;
     }
 
-
-    public static void main(String[] args) {
-        Car mycar = new Car("Citroën", " Xsara", "Diesel");
-    }
 
     public void start() {
         if (this.tachometer == 0) {
@@ -81,23 +77,6 @@ public class Car {
         }
     }
 
-    public String showSteeringWheelDetail() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("O volante está ");
-
-        if (this.wheelsAngle == 0) {
-            builder.append("no centro.");
-        } else if (this.wheelsAngle > 0) {
-            builder.append("xirado á dereita.");
-        } else {
-            builder.append("xirado á esquerda.");
-        }
-        builder.append(" O ángulo de xiro do volante é " + this.wheelsAngle + " graos.");
-
-        return builder.toString();
-    }
-
-
     private boolean isReverse() {
         return this.reverse;
     }
@@ -119,15 +98,6 @@ public class Car {
         } else {
             System.out.println("Non se pode cambiar á marcha atrás sen estar parado.");
         }
-
-    }
-
-    public void showDetails() {
-        System.out.println("O coche marca " + this.brand + " modelo " + this.model + " ten unha velocidade de "
-                + this.speedometer + " . " + "\n O tacógrafo marca " + this.tachometer + " . O sentido da marcha é " + this.gear
-                + ". O ángulo de xiro do volante é " + this.showSteeringWheelDetail());
-
-
     }
 
     public boolean isTachometerGreaterThanZero() {
@@ -136,7 +106,6 @@ public class Car {
         } else {
             return false;
         }
-
     }
 
     public boolean isTachometerEqualToZero() {
